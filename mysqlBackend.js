@@ -115,7 +115,7 @@ app.get('/accessories', (req, res) => {
 
 // GET route to serve the HTML form on the root route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'add_accessory.html'));
+    res.sendFile(path.join(__dirname,'views','add_accessory.html'));
 });
 
 // Start the server
