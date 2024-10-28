@@ -5,6 +5,7 @@ const app = express();
 const port = 3000; 
 
 app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -20,23 +21,28 @@ connection.connect((err) => {
     console.log('connected to database'); 
 });
 
+
+
 // POST route to add accessory
 app.post('/add-accessory', (req, res) => {
-    const { accessory_name, health, defense, posture, reiastu, meter_gain, reiastu_regen, reduced_meter_drain, hierro_pen } = req.body; 
-    
-    const query = `INSERT INTO accessories (accessory_name, health, defense, posture, reiastu, meter_gain, reiastu_regen, reduced_meter_drain, hierro_pen) 
+    console.log('Received data:', req.body);  // Log incoming data to check
+
+    const { accessory_name, health, defense, posture, reiatsu, meter_gain, reiatsu_regen, reduced_meter_drain, hierro_pen } = req.body;
+
+    const query = `INSERT INTO accessories (accessory_name, health, defense, posture, reiatsu, meter_gain, reiatsu_regen, reduced_meter_drain, hierro_pen) 
                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
-    connection.query(query, [accessory_name, health, defense, posture, reiastu, meter_gain, reiastu_regen, reduced_meter_drain, hierro_pen], (err, results) => {
+    connection.query(query, [accessory_name, health, defense, posture, reiatsu, meter_gain, reiatsu_regen, reduced_meter_drain, hierro_pen], (err, results) => {
         if (err) {
             console.error('Could not execute query', err); 
-            res.status(500).json({ message: 'Error adding accessory', error: err });
+            return res.status(500).json({ message: 'Error adding accessory', error: err });
         } else {
             console.log('ACCESSORY ADDED');
-            res.status(200).sendFile(path.join(__dirname, 'views', 'success.html'));
+            return res.status(200).sendFile(path.join(__dirname, 'views', 'success.html'));
         }
     });
 });
+
 
 // GET route to fetch and display all accessories
 app.get('/accessories', (req, res) => {
@@ -77,9 +83,9 @@ app.get('/accessories', (req, res) => {
                             <th>Health</th>
                             <th>Defense</th>
                             <th>Posture</th>
-                            <th>Reiastu</th>
+                            <th>reiatsu</th>
                             <th>Meter Gain</th>
-                            <th>Reiastu Regen</th>
+                            <th>reiatsu Regen</th>
                             <th>Reduced Meter Drain</th>
                             <th>Hierro Pen</th>
                         </tr>`;
@@ -93,9 +99,9 @@ app.get('/accessories', (req, res) => {
                         <td>${accessory.health}</td>
                         <td>${accessory.defense}</td>
                         <td>${accessory.posture}</td>
-                        <td>${accessory.reiastu}</td>
+                        <td>${accessory.reiatsu}</td>
                         <td>${accessory.meter_gain}</td>
-                        <td>${accessory.reiastu_regen}</td>
+                        <td>${accessory.reiatsu_regen}</td>
                         <td>${accessory.reduced_meter_drain}</td>
                         <td>${accessory.hierro_pen}</td>
                     </tr>`;
@@ -122,3 +128,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+

@@ -3,10 +3,11 @@ CREATE TABLE accessories (
     accessory_name VARCHAR(100),
     health INT, 
     defense INT, 
-    posture DECIMAL(2,2), 
-    reiastu DECIMAL(2,2),
-    meter_gain DECIMAL(2,2), 
-    reiastu_regen DECIMAL(2,2),
-    reduced_meter_drain DECIMAL(2,2),
+    posture DECIMAL(5,2), 
+     reiatsu    DECIMAL(5,2) NOT NULL,
+    meter_gain DECIMAL(5,2), 
+    reiatsu_regen DECIMAL(5,2),
+    reduced_meter_drain DECIMAL(5,2),
+    hierro_pen DECIMAL(5,2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ); 

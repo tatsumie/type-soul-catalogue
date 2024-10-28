@@ -4,40 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Accessory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], 
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .view-btn { 
+            /**
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            **/
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            margin-top: 10px;
+            margin-left: auto;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .view-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Add New Accessory</h2>
-
 <form action="/add-accessory" method="POST">
-    <label for="accessory_name">Accessory Name:</label><br>
-    <input type="text" id="accessory_name" name="accessory_name" required><br><br>
+    <h2>Add New Accessory</h2>
+    <label for="accessory_name">Accessory Name:</label>
+    <input type="text" id="accessory_name" name="accessory_name" required>
 
-    <label for="health">Health:</label><br>
-    <input type="number" id="health" name="health" required><br><br>
+    <label for="health">Health:</label>
+    <input type="number" id="health" name="health" required>
 
-    <label for="defense">Defense:</label><br>
-    <input type="number" id="defense" name="defense" required><br><br>
+    <label for="defense">Defense:</label>
+    <input type="number" id="defense" name="defense" required>
 
-    <label for="posture">Posture:</label><br>
-    <input type="number" step="0.01" id="posture" name="posture" required><br><br>
+    <label for="posture">Posture:</label>
+    <input type="number" step="0.01" id="posture" name="posture" required>
 
-    <label for="reiastu">Reiastu:</label><br>
-    <input type="number" step="0.01" id="reiastu" name="reiastu" required><br><br>
+    <label for="reiastu">Reiastu:</label>
+    <input type="number" step="0.01" id="reiastu" name="reiastu" required>
 
-    <label for="meter_gain">Meter Gain:</label><br>
-    <input type="number" step="0.01" id="meter_gain" name="meter_gain" required><br><br>
+    <label for="meter_gain">Meter Gain:</label>
+    <input type="number" step="0.01" id="meter_gain" name="meter_gain" required>
 
-    <label for="reiastu_regen">Reiastu Regen:</label><br>
-    <input type="number" step="0.01" id="reiastu_regen" name="reiastu_regen" required><br><br>
+    <label for="reiastu_regen">Reiastu Regen:</label>
+    <input type="number" step="0.01" id="reiastu_regen" name="reiastu_regen" required>
 
-    <label for="reduced_meter_drain">Reduced Meter Drain:</label><br>
-    <input type="number" step="0.01" id="reduced_meter_drain" name="reduced_meter_drain" required><br><br>
+    <label for="reduced_meter_drain">Reduced Meter Drain:</label>
+    <input type="number" step="0.01" id="reduced_meter_drain" name="reduced_meter_drain" required>
 
-    <label for="hierro_pen">Hierro Pen:</label><br>
-    <input type="number" step="0.01" id="hierro_pen" name="hierro_pen" required><br><br>
+    <label for="hierro_pen">Hierro Pen:</label>
+    <input type="number" step="0.01" id="hierro_pen" name="hierro_pen" required>
 
+    <!-- Add Accessory button -->
     <input type="submit" value="Add Accessory">
+
+    <!-- View Accessories button -->
+    <a href="/accessories" class="view-btn">View Accessories</a>
 </form>
 
 </body>
