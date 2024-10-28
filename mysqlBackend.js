@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:true}));
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
+    password: 'Ellisor01!',
     database: process.env.DB_NAME
 });
 connection.connect((err) => {
@@ -86,9 +86,9 @@ app.get('/accessories', (req, res) => {
                             <th>Health</th>
                             <th>Defense</th>
                             <th>Posture</th>
-                            <th>reiatsu</th>
+                            <th>Reiatsu</th>
                             <th>Meter Gain</th>
-                            <th>reiatsu Regen</th>
+                            <th>Reiatsu Regen</th>
                             <th>Reduced Meter Drain</th>
                             <th>Hierro Pen</th>
                         </tr>`;

@@ -4,7 +4,7 @@ CREATE TABLE accessories (
     health INT, 
     defense INT, 
     posture DECIMAL(5,2), 
-     reiatsu    DECIMAL(5,2) NOT NULL,
+    reiatsu DECIMAL(5,2),
     meter_gain DECIMAL(5,2), 
     reiatsu_regen DECIMAL(5,2),
     reduced_meter_drain DECIMAL(5,2),
