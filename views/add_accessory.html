@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Accessory</title>
+</head>
+<body>
+
+<h2>Add New Accessory</h2>
+
+<form action="/add-accessory" method="POST">
+    <label for="accessory_name">Accessory Name:</label><br>
+    <input type="text" id="accessory_name" name="accessory_name" required><br><br>
+
+    <label for="health">Health:</label><br>
+    <input type="number" id="health" name="health" required><br><br>
+
+    <label for="defense">Defense:</label><br>
+    <input type="number" id="defense" name="defense" required><br><br>
+
+    <label for="posture">Posture:</label><br>
+    <input type="number" step="0.01" id="posture" name="posture" required><br><br>
+
+    <label for="reiastu">Reiastu:</label><br>
+    <input type="number" step="0.01" id="reiastu" name="reiastu" required><br><br>
+
+    <label for="meter_gain">Meter Gain:</label><br>
+    <input type="number" step="0.01" id="meter_gain" name="meter_gain" required><br><br>
+
+    <label for="reiastu_regen">Reiastu Regen:</label><br>
+    <input type="number" step="0.01" id="reiastu_regen" name="reiastu_regen" required><br><br>
+
+    <label for="reduced_meter_drain">Reduced Meter Drain:</label><br>
+    <input type="number" step="0.01" id="reduced_meter_drain" name="reduced_meter_drain" required><br><br>
+
+    <label for="hierro_pen">Hierro Pen:</label><br>
+    <input type="number" step="0.01" id="hierro_pen" name="hierro_pen" required><br><br>
+
+    <input type="submit" value="Add Accessory">
+</form>
+
+</body>
+</html>
