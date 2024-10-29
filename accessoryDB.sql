@@ -4,9 +4,9 @@ CREATE TABLE accessories (
     health INT, 
     defense INT, 
     posture DECIMAL(5,2), 
-    reiatsu DECIMAL(5,2),
+    reiatsu DECIMAL(5,2) NOT NULL,
     meter_gain DECIMAL(5,2), 
-    reiatsu_regen DECIMAL(5,2),
+    reiatsu_regen DECIMAL(5,2) NOT NULL,
     reduced_meter_drain DECIMAL(5,2),
     hierro_pen DECIMAL(5,2),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP

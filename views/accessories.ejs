@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessory Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .top-left-container{
+            position: absolute; 
+            top:10px;
+            left: 20px;
+        }
+        .add-button{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 280px;
+            margin: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .card-body {
+            padding: 10px;
+            display: flex;
+        }
+        .stat-names, .stat-values {
+            flex: 1;
+            padding: 5px;
+            line-height: 1.5;
+        }
+        .stat-names {
+            text-align: left;
+            font-weight: bold;
+            border-right: 1px solid #ddd;
+            margin-right: 5px;
+        }
+        .stat-values {
+            text-align: right;
+            padding-left: 5px;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left-container">
+        <a href="/" class="add-button">Add Accessory</a>
+    </div>
+
+    <% accessories.forEach(accessory => { %>
+        <div class="card">
+            <div class="card-header"><%= accessory.accessory_name %></div>
+            <div class="card-body">
+                <div class="stat-names">
+                    <p>Health</p>
+                    <p>Defense</p>
+                    <p>Posture</p>
+                    <p>Reiatsu</p>
+                    <p>Meter Gain</p>
+                    <p>Reiatsu Regen</p>
+                    <p>Reduced Meter Drain</p>
+                    <p>Hierro Pen</p>
+                </div>
+                <div class="stat-values">
+                    <!-- Make sure each stat corresponds with its value -->
+                    <p><%= accessory.health %></p> <!-- Health -->
+                    <p><%= accessory.defense %></p> <!-- Defense -->
+                    <p><%= accessory.posture %></p> <!-- Posture -->
+                    <p><%= accessory.reiatsu %></p> 
+                    <p><%= accessory.meter_gain %></p> <!-- Meter Gain -->
+                    <p ><%= accessory.reiatsu_regen %></p> 
+                    <p><%= accessory.reduced_meter_drain %></p> <!-- Reduced Meter Drain -->
+                    <p><%= accessory.hierro_pen %></p> <!-- Hierro Pen -->
+                    <% console.log(accessory); %>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+
+</body>
+</html>
